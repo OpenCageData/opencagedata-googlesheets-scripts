@@ -1,3 +1,7 @@
+//
+// use this script for reverse geocoding:
+// to turn coordinates into a place name
+//
 function reverse(lat,lon,key,language){
     // full API docs: https://geocoder.opencagedata.com/api
     
@@ -5,8 +9,11 @@ function reverse(lat,lon,key,language){
         + lat
         + '%2C'
         + lon
-        + '&key=' + key
-        + '&language=' + language;
+        + '&key=' + key;
+        
+    if (language){
+        url += '&language=' + language;
+    }
   
     var response = UrlFetchApp.fetch(url,{
         "headers" : {
