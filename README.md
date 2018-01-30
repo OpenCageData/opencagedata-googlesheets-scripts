@@ -25,5 +25,6 @@ You can use Google Sheets and the [OpenCage Geocoder](https://geocoder.opencaged
 Note that in both cases `language` is optional, but if used should be a language code [as per the API docs](https://geocoder.opencagedata.com/api#forward-opt).
 
 
-Here is a revere example:
-![Reverse Geocoding in Sheets example](opencage-googlesheets-screenshot.png)
+Here is an example:
+
+![Geocoding in Sheets example](opencage-googlesheets-screenshot.png)
