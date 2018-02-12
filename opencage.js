@@ -3,7 +3,8 @@ function geocode(query,gtype,key,language){
     // full API docs: https://geocoder.opencagedata.com/api    
     var url = 'https://api.opencagedata.com/geocode/v1/json?query='
         + query
-        + '&key=' + key;
+        + '&key=' + key
+        + '&no_record=1';
         
     if (language){
         url += '&language=' + language;
