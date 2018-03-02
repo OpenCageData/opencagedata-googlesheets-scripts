@@ -42,6 +42,9 @@ function geocode(query,gtype,key,language){
             }
         }
     }
+    else if (code == 400){
+        return "invalid request";
+    }
     else if (code == 402){
         return "free limit exceeded";
         // todo: print the time until access is again allowed
