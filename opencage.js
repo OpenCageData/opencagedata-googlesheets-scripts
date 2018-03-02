@@ -12,7 +12,7 @@ function geocode(query,gtype,key,language){
 
     // we don't need annotations so we turn them off
     // to make it slightly faster
-    url += 'no_annotations=1';
+    url += '&no_annotations=1';
     
     var response = UrlFetchApp.fetch(url,{
         "headers" : {
