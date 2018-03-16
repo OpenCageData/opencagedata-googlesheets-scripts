@@ -32,27 +32,3 @@ Put you addresses in a column, or your coordinates in two columns (latitude, lon
 
 ![Reverse results](reverse-results.png)
 
-
-
-
-
-5. If you want to convert coordinates into placenames use the `reverse` function
-   with the following parameters:
-
-```
-=reverse(longitude,latitude,api_key,language)
-```
-
-   If you want to convert placenames into coordinates use the `forward` function
-   with the following parameters:
-
-```
-=forward(place,api_key,language)
-```
-
-Note that in both cases `language` is optional, but if used should be a language code [as per the API docs](https://geocoder.opencagedata.com/api#forward-opt).
-
-
-Here is an example:
-
-![Geocoding in Sheets example](opencage-googlesheets-screenshot.png)
