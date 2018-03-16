@@ -6,6 +6,9 @@ You can use Google Sheets and the [OpenCage Geocoder](https://geocoder.opencaged
 
 Put you addresses in a column, or your coordinates in two columns (latitude, longitude)
 
+**First we show how to do reverse geocoding**
+
+
 ![Reverse Geocoding in Sheets example](reverse1.png)
 
 3. open Tools > Scripts editor
@@ -31,4 +34,30 @@ Put you addresses in a column, or your coordinates in two columns (latitude, lon
 7. The results will appear in the third column you selected.
 
 ![Reverse results](reverse-results.png)
+
+
+**Forward geocoding is very similar:**
+
+Follow steps 1-5 above
+
+6. Create three columns, the first column should contain the address
+
+![Forward example](forward-example.png)
+
+7. Select the three columns and then click "Address to Latitude, Longitude" in the "Geocode" menu.
+
+![Forward select](forward-select.png)
+
+  * You will be prompted to give the script access to your Google docs. You will need to select yes.
+
+  * A popup will appear asking your for your API key. Enter it and click "Geocode"
+
+![Enter key](forward-key.png)
+
+8. The results will appear in the second and third column you selected.
+
+![Forward results](forward-results.png)
+
+
+
 
