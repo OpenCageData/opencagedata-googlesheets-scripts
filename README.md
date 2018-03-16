@@ -4,27 +4,60 @@ You can use Google Sheets and the [OpenCage Geocoder](https://geocoder.opencaged
 
 2. create a new Sheet
 
+Put you addresses in a column, or your coordinates in two columns (latitude, longitude)
+
+**First we show how to do reverse geocoding**
+
+
+![Reverse Geocoding in Sheets example](reverse1.png)
+
 3. open Tools > Scripts editor
 
-4. copy the script [opencage.js](opencage.js) into the scripts editor and save
+![Scripts editor](reverse2.png)
 
-5. If you want to convert coordinates into placenames use the `reverse` function
-   with the following parameters:
+4. copy the script [opencage.js](opencage.js) into the scripts editor and save.
 
-```
-=reverse(longitude,latitude,api_key,language)
-```
+![Scripts editor](scripts-editor.png)
 
-   If you want to convert placenames into coordinates use the `forward` function
-   with the following parameters:
+5. Reload your Google Sheet. After a few seconds a new "Geocode" button should appear
 
-```
-=forward(place,api_key,language)
-```
+![Geocode button](geocode-button.png)
 
-Note that in both cases `language` is optional, but if used should be a language code [as per the API docs](https://geocoder.opencagedata.com/api#forward-opt).
+6. Select three columns, and then click on "Latitude, Longitude to Address"
+
+  * You will be prompted to give the script access to your Google docs. You will need to select yes.
+
+  * A popup will appear asking your for your API key. Enter it and click "Geocode"
+
+![Enter key](enter-key.png)
+
+7. The results will appear in the third column you selected.
+
+![Reverse results](reverse-results.png)
 
 
-Here is an example:
+**Forward geocoding is very similar:**
 
-![Geocoding in Sheets example](opencage-googlesheets-screenshot.png)
+Follow steps 1-5 above
+
+6. Create three columns, the first column should contain the address
+
+![Forward example](forward-example.png)
+
+7. Select the three columns and then click "Address to Latitude, Longitude" in the "Geocode" menu.
+
+![Forward select](forward-select.png)
+
+  * You will be prompted to give the script access to your Google docs. You will need to select yes.
+
+  * A popup will appear asking your for your API key. Enter it and click "Geocode"
+
+![Enter key](forward-key.png)
+
+8. The results will appear in the second and third column you selected.
+
+![Forward results](forward-results.png)
+
+
+
+
