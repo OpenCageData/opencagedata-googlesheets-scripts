@@ -15,7 +15,7 @@ function reverse(){
 function callAPI(query, key){
     // full API docs: https://geocoder.opencagedata.com/api    
     var url = 'https://api.opencagedata.com/geocode/v1/json?query='
-        + encodeURIComponent(query)
+        + query
         + '&key=' + key;
         
     if (language){
