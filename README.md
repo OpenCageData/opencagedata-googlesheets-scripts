@@ -12,13 +12,28 @@ Put you addresses in a column, or your coordinates in two columns (latitude, lon
 
 ![Scripts editor](reverse2.png)
 
-4. copy the script [opencage.js](opencage.js) into the scripts editor and save
+4. copy the script [opencage.js](opencage.js) into the scripts editor and save.
 
 ![Scripts editor](scripts-editor.png)
 
 5. Reload your Google Sheet. After a few seconds a new "Geocode" button should appear
 
 ![Geocode button](geocode-button.png)
+
+6. Select three columns, and then click on "Latitude, Longitude to Address"
+
+  * You will be prompted to give the script access to your Google docs. You will need to select yes.
+
+  * A popup will appear asking your for your API key. Enter it and click "Geocode"
+
+![Enter key](enter-key.png)
+
+7. The results will appear in the third column you selected.
+
+![Reverse results](reverse-results.png)
+
+
+
 
 
 5. If you want to convert coordinates into placenames use the `reverse` function
