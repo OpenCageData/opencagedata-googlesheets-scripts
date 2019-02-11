@@ -50,36 +50,29 @@ function error_txt(code){
 }
 
 function getKey(gtype){
-    var app = UiApp.createApplication()
-        .setTitle('Please enter your OpenCage API key')
-        .setStyleAttribute('width', '460')
-        .setStyleAttribute('padding', '20');
+    var ui = SpreadsheetApp.getUi(); 
 
-    var grid = app.createGrid(3, 2);
-    grid.setWidget(1, 0, app.createLabel('API key:'));
-    grid.setWidget(1, 1, app.createTextBox().setName('key').setId('key'));
-    
-    var panel = app.createVerticalPanel().setId('geocodePanel');
-    // add grid to panel
-    panel.add(grid);
-    var button = app.createButton('Geocode')
-      .setStyleAttribute('margin-top', '10')
-      .setId('geocode');
-    var handler;
-    if (gtype == 'forward'){
-        handler = app.createServerClickHandler('do_forward');
-    } else {
-        handler = app.createServerClickHandler('do_reverse');
+    var result = ui.prompt(
+        '',
+        'Please enter your OpenCage API key:',
+        ui.ButtonSet.OK_CANCEL);
+
+    var button = result.getSelectedButton();
+    if (button == ui.Button.OK) {
+        var APIkey = result.getResponseText();
+        if (gtype == 'forward'){
+            do_forward(APIkey);
+        } else {
+            do_reverse(APIkey);            
+        }        
+    } else if (button == ui.Button.CANCEL) { 
+        ui.alert("without a valid OpenCage API key you can't geocode");
+    } else if (button == ui.Button.CLOSE) {
+        ui.alert("without a valid OpenCage API key you can't geocode");
     }
-    handler.addCallbackElement(grid);
-    button.addClickHandler(handler);
-    grid.setWidget(2, 1, button);
-    app.add(panel);
-    ss.show(app);
 }
 
-function do_forward(e){
-    var key = e.parameter.key;
+function do_forward(key){
     var sheet = SpreadsheetApp.getActiveSheet();
     var cells = sheet.getActiveRange();
 
@@ -123,8 +116,7 @@ function do_forward(e){
     }      
 }
 
-function do_reverse(e){
-    var key = e.parameter.key;
+function do_reverse(key){
     var sheet = SpreadsheetApp.getActiveSheet();
     var cells = sheet.getActiveRange();
   
