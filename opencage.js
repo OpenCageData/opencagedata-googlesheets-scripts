@@ -120,7 +120,7 @@ function do_reverse(key){
     var sheet = SpreadsheetApp.getActiveSheet();
     var cells = sheet.getActiveRange();
   
-    // Must have selected at least 3 columns (Address, Lat, Lng).
+    // Must have selected at least 3 columns (Lat, Lng, Address).
     // Must have selected at least 1 row.
     var columnCount = cells.getNumColumns(); 
     if (columnCount < 3){
