@@ -15,7 +15,7 @@ function reverse(){
 function callAPI(query, key){
     // full API docs: https://opencagedata.com/api    
     var url = 'https://api.opencagedata.com/geocode/v1/json?query='
-        + query
+        + encodeURIComponent(query)
         + '&key=' + key;
         
     if (language){
@@ -41,7 +41,7 @@ function callAPI(query, key){
 
 function error_txt(code){
     if (code == 402){
-        return "free limit exceeded";
+        return "free trial limit exceeded";
     }
     else if (code == 403){
         return "invalid API key";
